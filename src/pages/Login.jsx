@@ -1,13 +1,14 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "../style/Login.css"
 
+// ✅ Requisito: Tela de login com validação de entrada
 export default function Login() {
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
   const [erro, setErro] = useState("")
   const navigate = useNavigate()
 
-  // ✅ Requisito: Tela de login com validação de entrada
   const handleLogin = async (e) => {
     e.preventDefault()
 
@@ -29,31 +30,29 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <h2>Login</h2>
-
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="E-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <br />
-        <input
-          type="password"
-          placeholder="Senha"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
-          required
-        />
-        <br />
-        <button type="submit">Entrar</button>
-
-        {/* ✅ Requisito: Exibição de erro na interface em caso de login mal-sucedido */}
-        {erro && <p style={{ color: "red" }}>{erro}</p>}
-      </form>
+    <div className="login-container">
+      <div className="login-box">
+        <h2>Login</h2>
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="E-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Senha"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            required
+          />
+          <button type="submit">Entrar</button>
+          {/* ✅ Requisito: Exibição de erro na interface em caso de login mal-sucedido */}
+          {erro && <p className="erro">{erro}</p>}
+        </form>
+      </div>
     </div>
   )
 }

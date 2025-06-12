@@ -1,0 +1,65 @@
+.home-container {
+  display: flex;
+  gap: 20px;
+}
+
+.home-conteudo {
+  padding: 20px;
+}
+
+.home-busca {
+  padding: 8px;
+  margin-bottom: 20px;
+  width: 300px;
+  background-color: #1e0d0d;
+  color: white;
+  border: none;
+}
+
+.home-livros {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.home-livro {
+  background-color: #f9f9f9;
+  padding: 15px;
+  text-align: center;
+  width: 180px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.home-livro img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.home-livro strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.home-preco {
+  color: #700000;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.home-livro button {
+  background-color: #700000;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}

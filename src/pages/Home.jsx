@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getLivros } from "../services/livroService"
 import FiltroLateral from "../components/FiltroLateral"
+import "../style/Home.css"
 
 // ✅ Requisito: Filtro de livros por autor e tema
 // ✅ Requisito: Busca por título
@@ -40,24 +41,25 @@ export default function Home({ adicionarCarrinho }) {
   )
 
   return (
-    <div style={{ display: "flex", gap: "20px" }}>
+    <div className="home-container">
       <FiltroLateral autores={autores} temas={temas} onFiltro={handleFiltro} />
 
-      <div>
+      <div className="home-conteudo">
         <input
           type="text"
           placeholder="Buscar por título..."
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
+          className="home-busca"
         />
 
-        <ul style={{ listStyle: "none", padding: 0 }}>
+        <ul className="home-livros">
           {livrosFiltrados.map(l => (
-            <li key={l.id} style={{ marginBottom: "20px", borderBottom: "1px solid #ccc", paddingBottom: "10px" }}>
-              <img src={l.imagem} alt={l.titulo} style={{ width: "100px", marginBottom: "5px" }} />
-              <br />
-              <strong>{l.titulo}</strong> - {l.autor} - R$ {l.valor.toFixed(2)}
-              <br />
+            <li key={l.id} className="home-livro">
+              <img src={l.imagem} alt={l.titulo} />
+              <strong>{l.titulo}</strong>
+              <div>{l.autor}</div>
+              <div className="home-preco">R$ {l.valor.toFixed(2)}</div>
               <button onClick={() => adicionarCarrinho(l)}>Adicionar ao carrinho</button>
             </li>
           ))}

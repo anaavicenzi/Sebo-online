@@ -1,16 +1,18 @@
+import { FaInstagram, FaWhatsapp } from "react-icons/fa"
+import "../style/Footer.css"
+
 export default function Footer() {
   return (
-    <footer style={{
-      backgroundColor: "#333",
-      color: "#fff",
-      textAlign: "center",
-      padding: "10px",
-      position: "fixed",
-      bottom: 0,
-      width: "100%"
-    }}>
-      <p>Sebo Online © 2025 | 📷 Instagram | 📱 WhatsApp | 📘 Facebook</p>
+    <footer className="footer">
+      <p>Sebo Online © 2025</p>
+      <div className="footer-icons">
+        <a href="https://www.instagram.com/liapraler/?igsh=MXJwZHlnaGQ1YmhwMA%3D%3D#" target="_blank" rel="noreferrer">
+          <FaInstagram />
+        </a>
+        <a href="https://wa.me/5548991750118" target="_blank" rel="noreferrer">
+          <FaWhatsapp />
+        </a>
+      </div>
     </footer>
   )
 }
-// ✅ Requisito: Footer fixo em todas as telas (exceto login)

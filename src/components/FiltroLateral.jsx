@@ -1,21 +1,39 @@
+import "../style/FiltroLateral.css"
+
 export default function FiltroLateral({ autores, temas, onFiltro }) {
   return (
-    <aside>
-      <h3>Filtrar por autor</h3>
-      {autores.map((a, i) => (
-        <label key={i}>
-          <input type="checkbox" value={a} onChange={onFiltro} name="autor" />
-          {a}
-        </label>
-      ))}
+    <div className="filtro-container">
+      <h3>( Categorias )</h3>
 
-      <h3>Filtrar por tema</h3>
-      {temas.map((t, i) => (
-        <label key={i}>
-          <input type="checkbox" value={t} onChange={onFiltro} name="tema" />
-          {t}
-        </label>
-      ))}
-    </aside>
+      <div className="filtro-bloco">
+        <p className="filtro-titulo">Filtrar por autor</p>
+        {autores.map((autor) => (
+          <label key={autor}>
+            <input
+              type="checkbox"
+              name="autor"
+              value={autor}
+              onChange={onFiltro}
+            />
+            {autor}
+          </label>
+        ))}
+      </div>
+
+      <div className="filtro-bloco">
+        <p className="filtro-titulo">Filtrar por tema</p>
+        {temas.map((tema) => (
+          <label key={tema}>
+            <input
+              type="checkbox"
+              name="tema"
+              value={tema}
+              onChange={onFiltro}
+            />
+            {tema}
+          </label>
+        ))}
+      </div>
+    </div>
   )
 }

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { getLivros, addLivro, deleteLivro } from "../services/livroService"
+import "../style/Editor.css"
 
 export default function Editor() {
   const [livros, setLivros] = useState([])
-  const [novoLivro, setNovoLivro] = useState({
+  const [form, setForm] = useState({
     titulo: "", autor: "", tema: "", valor: "", estado: "", imagem: ""
   })
 
@@ -17,39 +18,43 @@ export default function Editor() {
   }
 
   const handleChange = (e) => {
-    setNovoLivro({ ...novoLivro, [e.target.name]: e.target.value })
+    setForm({ ...form, [e.target.name]: e.target.value })
   }
-// ✅ Requisito: CRUD de livros – cadastro
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await addLivro(novoLivro)
-    setNovoLivro({ titulo: "", autor: "", tema: "", valor: "", estado: "", imagem: "" })
+    await addLivro(form)
+    setForm({ titulo: "", autor: "", tema: "", valor: "", estado: "", imagem: "" })
     carregarLivros()
   }
-// ✅ Requisito: CRUD de livros – exclusão
+
   const excluir = async (id) => {
     await deleteLivro(id)
     carregarLivros()
   }
 
   return (
-    <div>
+    <div className="editor-container">
       <h2>Cadastro de Livros</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="titulo" value={novoLivro.titulo} onChange={handleChange} placeholder="Título" />
-        <input name="autor" value={novoLivro.autor} onChange={handleChange} placeholder="Autor" />
-        <input name="tema" value={novoLivro.tema} onChange={handleChange} placeholder="Tema" />
-        <input name="valor" value={novoLivro.valor} onChange={handleChange} placeholder="Valor" />
-        <input name="estado" value={novoLivro.estado} onChange={handleChange} placeholder="Estado" />
-        <input name="imagem" value={novoLivro.imagem} onChange={handleChange} placeholder="URL da imagem" />
+
+      <form onSubmit={handleSubmit} className="editor-form">
+        <input name="titulo" value={form.titulo} onChange={handleChange} placeholder="Título" />
+        <input name="autor" value={form.autor} onChange={handleChange} placeholder="Autor" />
+        <input name="tema" value={form.tema} onChange={handleChange} placeholder="Tema" />
+        <input name="valor" value={form.valor} onChange={handleChange} placeholder="Valor" />
+        <input name="estado" value={form.estado} onChange={handleChange} placeholder="Estado" />
+        <input name="imagem" value={form.imagem} onChange={handleChange} placeholder="URL da imagem" />
         <button type="submit">Cadastrar</button>
       </form>
 
       <h3>Lista de Livros</h3>
-      <ul>
+      <ul className="livros-lista">
         {livros.map((livro) => (
-          <li key={livro.id}>
-            {livro.titulo} - {livro.autor} - R$ {livro.valor}
+          <li key={livro.id} className="livro-item">
+            <img src={livro.imagem} alt={livro.titulo} />
+            <div>
+              <strong>{livro.titulo}</strong> - {livro.autor} - R$ {livro.valor}
+            </div>
             <button onClick={() => excluir(livro.id)}>Excluir</button>
           </li>
         ))}

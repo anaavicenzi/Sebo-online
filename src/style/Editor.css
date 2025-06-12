@@ -1,0 +1,69 @@
+.editor-container {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.editor-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.editor-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.editor-form button {
+  grid-column: span 2;
+  padding: 12px;
+  background-color: #800020;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.editor-form button:hover {
+  background-color: #a61e3b;
+}
+
+.livros-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.livro-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+.livro-item img {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.livro-item button {
+  margin-left: auto;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.livro-item button:hover {
+  background-color: #e60000;
+}

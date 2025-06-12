@@ -1,3 +1,5 @@
+import "../style/Carrinho.css"
+
 // ✅ Requisito: Carrinho com adicionar, remover e editar quantidade
 // ✅ Requisito: Cálculo de total no carrinho
 
@@ -15,29 +17,36 @@ export default function Carrinho({ carrinho, setCarrinho }) {
   const total = carrinho.reduce((soma, item) => soma + item.valor * item.quantidade, 0)
 
   return (
-    <div>
+    <div className="carrinho-container">
       <h2>Carrinho</h2>
 
       {carrinho.length === 0 ? (
-        <p>Seu carrinho está vazio.</p>
+        <p className="mensagem-vazio">Seu carrinho está vazio.</p>
       ) : (
         <>
-          {carrinho.map(item => (
-            <div key={item.id} style={{ marginBottom: "10px" }}>
-              <strong>{item.titulo}</strong> - R$ {item.valor.toFixed(2)} x{" "}
-              <input
-                type="number"
-                min="1"
-                value={item.quantidade}
-                onChange={(e) => alterarQtd(item.id, Number(e.target.value))}
-                style={{ width: "50px" }}
-              />
-              <button onClick={() => remover(item.id)}>Remover</button>
-            </div>
-          ))}
+          <div className="lista-itens">
+            {carrinho.map(item => (
+              <div key={item.id} className="item-carrinho">
+                <img src={item.imagem} alt={item.titulo} />
+                <div className="info">
+                  <strong>{item.titulo}</strong>
+                  <span>R$ {item.valor.toFixed(2)}</span>
+                  <input
+                    type="number"
+                    min="1"
+                    value={item.quantidade}
+                    onChange={(e) => alterarQtd(item.id, Number(e.target.value))}
+                  />
+                </div>
+                <button onClick={() => remover(item.id)}>Remover</button>
+              </div>
+            ))}
+          </div>
 
-          <p><strong>Total:</strong> R$ {total.toFixed(2)}</p>
-          <button onClick={() => alert("Compra finalizada!")}>Finalizar Compra</button>
+          <div className="total-carrinho">
+            <p><strong>Total:</strong> R$ {total.toFixed(2)}</p>
+            <button className="btn-finalizar" onClick={() => alert("Compra finalizada!")}>Finalizar Compra</button>
+          </div>
         </>
       )}
     </div>
