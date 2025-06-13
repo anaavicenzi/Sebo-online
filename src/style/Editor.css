@@ -1,0 +1,77 @@
+.editor-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  padding: 40px;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.editor-box {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  max-width: 600px;
+}
+
+.editor-box h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #800020;
+  font-size: 24px;
+  text-align: center;
+}
+
+.editor-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.editor-box input[type="text"],
+.editor-box input[type="email"],
+.editor-box input[type="password"],
+.editor-box input[type="number"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.editor-box label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #444;
+}
+
+.editor-box button {
+  background-color: #800020;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.editor-box button:hover {
+  background-color: #a01c2f;
+}
+
+.editor-box ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.editor-box li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
