@@ -1,15 +1,16 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "admin",
       "email": "admin@sebo.com",
-      "senha": "123"
+      "senha": "123",
+      "beneficioEditor": true
     }
   ],
   "livros": [
     {
-      "id": 1,
+      "id": "1",
       "titulo": "Dom Casmurro",
       "autor": "Machado de Assis",
       "tema": "Romance",
