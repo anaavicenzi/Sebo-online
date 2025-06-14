@@ -43,3 +43,16 @@ export async function getLivroPorId(id) {
     return null
   }
 }
+
+export async function updateLivro(id, livro) {
+  try {
+    const res = await fetch(`${API_URL}/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(livro),
+    })
+    return await res.json()
+  } catch (err) {
+    console.error("Erro ao atualizar livro:", err)
+  }
+}

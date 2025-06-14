@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { getLivros, addLivro, deleteLivro } from "../services/livroService"
-import { getUsuarios, addUsuario, deleteUsuario } from "../services/usuarioService"
+import { getLivros, addLivro, deleteLivro, updateLivro } from "../services/livroService"
+import { getUsuarios, addUsuario, deleteUsuario, updateUsuario } from "../services/usuarioService"
 import "../style/Editor.css"
 
 export default function Editor() {
@@ -14,6 +14,9 @@ export default function Editor() {
   const [novoUsuario, setNovoUsuario] = useState({
     nome: "", email: "", senha: "", telefone: "", beneficioEditor: false
   })
+
+  const [editandoLivroId, setEditandoLivroId] = useState(null)
+  const [editandoUsuarioId, setEditandoUsuarioId] = useState(null)
 
   useEffect(() => {
     carregarLivros()
@@ -41,14 +44,24 @@ export default function Editor() {
 
   const handleSubmitLivro = async (e) => {
     e.preventDefault()
-    await addLivro(novoLivro)
+    if (editandoLivroId) {
+      await updateLivro(editandoLivroId, novoLivro)
+      setEditandoLivroId(null)
+    } else {
+      await addLivro(novoLivro)
+    }
     setNovoLivro({ titulo: "", autor: "", tema: "", valor: "", estado: "", imagem: "" })
     carregarLivros()
   }
 
   const handleSubmitUsuario = async (e) => {
     e.preventDefault()
-    await addUsuario(novoUsuario)
+    if (editandoUsuarioId) {
+      await updateUsuario(editandoUsuarioId, novoUsuario)
+      setEditandoUsuarioId(null)
+    } else {
+      await addUsuario(novoUsuario)
+    }
     setNovoUsuario({ nome: "", email: "", senha: "", telefone: "", beneficioEditor: false })
     carregarUsuarios()
   }
@@ -63,6 +76,29 @@ export default function Editor() {
     carregarUsuarios()
   }
 
+  const editarLivro = (livro) => {
+    setNovoLivro({
+      titulo: livro.titulo || "",
+      autor: livro.autor || "",
+      tema: livro.tema || "",
+      valor: livro.valor || "",
+      estado: livro.estado || "",
+      imagem: livro.imagem || ""
+    })
+    setEditandoLivroId(livro.id)
+  }
+
+  const editarUsuario = (usuario) => {
+    setNovoUsuario({
+      nome: usuario.nome || "",
+      email: usuario.email || "",
+      senha: usuario.senha || "",
+      telefone: usuario.telefone || "",
+      beneficioEditor: usuario.beneficioEditor || false
+    })
+    setEditandoUsuarioId(usuario.id)
+  }
+
   return (
     <div className="editor-container">
       <div className="editor-box">
@@ -74,14 +110,23 @@ export default function Editor() {
           <input name="valor" value={novoLivro.valor} onChange={handleChangeLivro} placeholder="Valor" />
           <input name="estado" value={novoLivro.estado} onChange={handleChangeLivro} placeholder="Estado" />
           <input name="imagem" value={novoLivro.imagem} onChange={handleChangeLivro} placeholder="URL da imagem" />
-          <button type="submit">Cadastrar Livro</button>
+          <button type="submit">{editandoLivroId ? "Salvar Alterações" : "Cadastrar Livro"}</button>
+          {editandoLivroId && (
+            <button type="button" onClick={() => {
+              setNovoLivro({ titulo: "", autor: "", tema: "", valor: "", estado: "", imagem: "" });
+              setEditandoLivroId(null);
+            }}>Cancelar</button>
+          )}
         </form>
 
         <ul>
           {livros.map((livro) => (
             <li key={livro.id}>
               {livro.titulo} - {livro.autor}
-              <button onClick={() => excluirLivro(livro.id)}>Excluir</button>
+              <div style={{ display: 'inline-flex', gap: '8px' }}>
+                <button onClick={() => editarLivro(livro)}>Editar</button>
+                <button onClick={() => excluirLivro(livro.id)}>Excluir</button>
+              </div>
             </li>
           ))}
         </ul>
@@ -103,14 +148,23 @@ export default function Editor() {
             />
             Benefício de Editor
           </label>
-          <button type="submit">Cadastrar Usuário</button>
+          <button type="submit">{editandoUsuarioId ? "Salvar Alterações" : "Cadastrar Usuário"}</button>
+          {editandoUsuarioId && (
+            <button type="button" onClick={() => {
+              setNovoUsuario({ nome: "", email: "", senha: "", telefone: "", beneficioEditor: false });
+              setEditandoUsuarioId(null);
+            }}>Cancelar</button>
+          )}
         </form>
 
         <ul>
           {usuarios.map((usuario) => (
             <li key={usuario.id}>
               {usuario.nome} - {usuario.email}
-              <button onClick={() => excluirUsuario(usuario.id)}>Excluir</button>
+              <div style={{ display: 'inline-flex', gap: '8px' }}>
+                <button onClick={() => editarUsuario(usuario)}>Editar</button>
+                <button onClick={() => excluirUsuario(usuario.id)}>Excluir</button>
+              </div>
             </li>
           ))}
         </ul>

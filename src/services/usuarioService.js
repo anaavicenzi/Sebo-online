@@ -16,3 +16,11 @@ export async function addUsuario(usuario) {
 export async function deleteUsuario(id) {
   await fetch(`${URL}/${id}`, { method: "DELETE" })
 }
+
+export async function updateUsuario(id, usuario) {
+  await fetch(`${URL}/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(usuario)
+  })
+}
