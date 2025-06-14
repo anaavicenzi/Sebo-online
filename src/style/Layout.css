@@ -1,0 +1,20 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  padding-bottom: 40px;
+  background-color: var(--background-light);
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 15px;
+    padding-bottom: 30px;
+  }
+} 

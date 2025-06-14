@@ -17,6 +17,15 @@
       "valor": 25.9,
       "estado": "Usado",
       "imagem": "/capas/dom-casmurro.jpg"
+    },
+    {
+      "id": "904d",
+      "titulo": "Torto Arado",
+      "autor": "Itamar Vieira Junior",
+      "tema": "Romance",
+      "valor": "R$20,00",
+      "estado": "Novo",
+      "imagem": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com.br%2FTorto-arado-Itamar-Vieira-Junior%2Fdp%2F6580309318&psig=AOvVaw0tJSgu6ee9nWaEiBEqmq8e&ust=1750003326746000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDYw82k8Y0DFQAAAAAdAAAAABAM"
     }
   ]
 }
