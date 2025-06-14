@@ -4,7 +4,7 @@ import "../style/Footer.css"
 export default function Footer() {
   return (
     <footer className="footer">
-      <p>Sebo Online © 2025</p>
+      <p>Lia. Estúdio Literário © 2025</p>
       <div className="footer-icons">
         <a href="https://www.instagram.com/liapraler/?igsh=MXJwZHlnaGQ1YmhwMA%3D%3D#" target="_blank" rel="noreferrer">
           <FaInstagram />

@@ -25,7 +25,7 @@ export default function FiltroLateral({ autores, temas, onFiltro }) {
 
   return (
     <div className="filtro-container">
-      <h3><i className="fas fa-filter"></i> Filtros</h3>
+      <h3> ( Categorias ) </h3>
       <button className="btn-limpar" onClick={limparFiltros}>
         <i className="fas fa-times"></i>
         Limpar Filtros
