@@ -4,6 +4,7 @@ import Login from "../pages/Login"
 import Home from "../pages/Home"
 import Editor from "../pages/Editor"
 import Carrinho from "../pages/Carrinho"
+import LivroDetalhes from "../pages/LivroDetalhes"
 import { getUsuarioLogado } from "../services/auth"
 
 export default function AppRoutes(props) {
@@ -20,6 +21,7 @@ export default function AppRoutes(props) {
       children: [
         { path: "home", element: <Home {...props} /> },
         { path: "carrinho", element: <Carrinho carrinho={props.carrinho} setCarrinho={props.setCarrinho} /> },
+        { path: "livro/:id", element: <LivroDetalhes adicionarCarrinho={props.adicionarCarrinho} /> },
         usuario?.beneficioEditor && { path: "editor", element: <Editor /> }
       ].filter(Boolean)
     }

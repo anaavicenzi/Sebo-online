@@ -33,3 +33,13 @@ export async function deleteLivro(id) {
     console.error("Erro ao excluir livro:", err)
   }
 }
+
+export async function getLivroPorId(id) {
+  try {
+    const res = await fetch(`${API_URL}/${id}`)
+    return await res.json()
+  } catch (err) {
+    console.error("Erro ao buscar livro por ID:", err)
+    return null
+  }
+}

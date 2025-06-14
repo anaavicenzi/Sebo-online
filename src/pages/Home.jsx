@@ -3,6 +3,7 @@ import { getLivros } from "../services/livroService"
 import FiltroLateral from "../components/FiltroLateral"
 import "../style/Home.css"
 import "../style/global.css"
+import { useNavigate } from "react-router-dom"
 
 // ✅ Requisito: Filtro de livros por autor e tema
 // ✅ Requisito: Busca por título
@@ -14,6 +15,7 @@ export default function Home({ adicionarCarrinho }) {
   const [filtroAutor, setFiltroAutor] = useState([])
   const [filtroTema, setFiltroTema] = useState([])
   const [busca, setBusca] = useState("")
+  const navigate = useNavigate()
 
   useEffect(() => {
     carregarLivros()
@@ -58,12 +60,12 @@ export default function Home({ adicionarCarrinho }) {
 
         <ul className="home-livros">
           {livrosFiltrados.map(l => (
-            <li key={l.id} className="home-livro">
+            <li key={l.id} className="home-livro" onClick={() => navigate(`/livro/${l.id}`)} style={{ cursor: 'pointer' }}>
               <img src={l.imagem} alt={l.titulo} />
               <strong>{l.titulo}</strong>
               <div className="autor">{l.autor}</div>
               <div className="home-preco">R$ {Number(l.valor).toFixed(2)}</div>
-              <button onClick={() => adicionarCarrinho(l)}>
+              <button onClick={e => { e.stopPropagation(); adicionarCarrinho(l); }}>
                 <i className="fas fa-shopping-cart"></i>
                 Adicionar ao carrinho
               </button>
