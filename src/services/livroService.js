@@ -56,3 +56,6 @@ export async function updateLivro(id, livro) {
     console.error("Erro ao atualizar livro:", err)
   }
 }
+// Requisito (c): Usa JSON Server para persistência dos livros
+// Requisito (d): Requisições HTTP para comunicação com backend
+// Requisito (e): Tratamento de exceções com try/catch em todas as requisições

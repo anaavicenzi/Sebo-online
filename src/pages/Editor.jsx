@@ -172,3 +172,5 @@ export default function Editor() {
     </div>
   )
 }
+// Requisito (g): CRUD completo de livros com 6 campos (titulo, autor, tema, valor, estado, imagem)
+// Requisito (h): CRUD completo de usuários com 5+ campos (nome, email, senha, telefone, beneficioEditor)

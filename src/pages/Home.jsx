@@ -5,11 +5,6 @@ import "../style/Home.css"
 import "../style/global.css"
 import { useNavigate } from "react-router-dom"
 
-// ✅ Requisito: Filtro de livros por autor e tema
-// ✅ Requisito: Busca por título
-// ✅ Requisito: Botão para adicionar livro ao carrinho
-// ✅ Requisito: Mostrar imagem do livro
-
 export default function Home({ adicionarCarrinho }) {
   const [livros, setLivros] = useState([])
   const [filtroAutor, setFiltroAutor] = useState([])
@@ -76,3 +71,5 @@ export default function Home({ adicionarCarrinho }) {
     </div>
   )
 }
+// Requisito (j): Página inicial com interação e redirecionamento via rotas
+// Extra: Aplica filtros dinâmicos e busca por título
