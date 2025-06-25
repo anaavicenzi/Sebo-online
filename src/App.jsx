@@ -19,3 +19,5 @@ export default function App() {
     <AppRoutes carrinho={carrinho} setCarrinho={setCarrinho} adicionarCarrinho={adicionarCarrinho} />
   )
 }
+// Requisito (a): Criação de uma aplicação com React.js
+// Requisito (j): Navegação entre páginas via props e rotas SPA

@@ -1,8 +1,5 @@
 import "../style/Carrinho.css"
 
-// ✅ Requisito: Carrinho com adicionar, remover e editar quantidade
-// ✅ Requisito: Cálculo de total no carrinho
-
 export default function Carrinho({ carrinho, setCarrinho }) {
   const remover = (id) => {
     setCarrinho(carrinho.filter(item => item.id !== id))
@@ -52,3 +49,4 @@ export default function Carrinho({ carrinho, setCarrinho }) {
     </div>
   )
 }
+// Requisito (j): Página acessada via rota, permite remover e editar itens do carrinho

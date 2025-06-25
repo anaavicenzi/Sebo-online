@@ -19,13 +19,85 @@
       "imagem": "/capas/dom-casmurro.jpg"
     },
     {
-      "titulo": "Torto Arado",
-      "autor": "Itamar Vieira Junior",
-      "tema": "Romance",
-      "valor": "20.00",
+      "titulo": "Harry Potter",
+      "autor": "J.K. Rowling",
+      "tema": "Fantasia",
+      "valor": 35.9,
       "estado": "Novo",
-      "imagem": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com.br%2FTorto-arado-Itamar-Vieira-Junior%2Fdp%2F6580309318&psig=AOvVaw0tJSgu6ee9nWaEiBEqmq8e&ust=1750003326746000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDYw82k8Y0DFQAAAAAdAAAAABAM",
-      "id": "904d"
+      "imagem": "/capas/harry-potter1.jpg",
+      "id": "2"
+    },
+    {
+      "id": "4",
+      "titulo": "O Código Da Vinci",
+      "autor": "Dan Brown",
+      "tema": "Suspense",
+      "valor": 27.5,
+      "estado": "Novo",
+      "imagem": "/capas/codigo-da-vinci.jpg"
+    },
+    {
+      "id": "5",
+      "titulo": "A Garota no Trem",
+      "autor": "Paula Hawkins",
+      "tema": "Thriller",
+      "valor": 24.99,
+      "estado": "Usado",
+      "imagem": "/capas/garota-no-trem.jpg"
+    },
+    {
+      "id": "6",
+      "titulo": "A Culpa é das Estrelas",
+      "autor": "John Green",
+      "tema": "Romance",
+      "valor": 22.9,
+      "estado": "Novo",
+      "imagem": "/capas/culpa-das-estrelas.jpg"
+    },
+    {
+      "id": "7",
+      "titulo": "Jogos Vorazes",
+      "autor": "Suzanne Collins",
+      "tema": "Distopia",
+      "valor": 30,
+      "estado": "Novo",
+      "imagem": "/capas/jogos-vorazes.jpg"
+    },
+    {
+      "id": "8",
+      "titulo": "O Hobbit",
+      "autor": "J.R.R. Tolkien",
+      "tema": "Fantasia",
+      "valor": 28.9,
+      "estado": "Usado",
+      "imagem": "/capas/o-hobbit.jpg"
+    },
+    {
+      "id": "9",
+      "titulo": "Orgulho e Preconceito",
+      "autor": "Jane Austen",
+      "tema": "Clássico",
+      "valor": 19.8,
+      "estado": "Usado",
+      "imagem": "/capas/orgulho-preconceito.jpg"
+    },
+    {
+      "id": "10",
+      "titulo": "O Diário de Anne Frank",
+      "autor": "Anne Frank",
+      "tema": "Histórico",
+      "valor": 21.5,
+      "estado": "Novo",
+      "imagem": "/capas/anne-frank.jpg"
+    },
+    {
+      "id": "11",
+      "titulo": "O Alquimista",
+      "autor": "Paulo Coelho",
+      "tema": "Ficção Filosófica",
+      "valor": 26,
+      "estado": "Usado",
+      "imagem": "/capas/o-alquimista.jpg"
     }
   ]
 }

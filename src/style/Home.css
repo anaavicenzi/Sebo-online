@@ -8,13 +8,15 @@
 
 .home-conteudo {
   flex: 1;
-  min-width: 0; /* Evita overflow em telas menores */
+  min-width: 0; 
 }
 
 .home-busca {
   position: relative;
   margin-bottom: 30px;
+  display: inline-block; 
 }
+
 
 .home-busca input {
   width: 100%;

@@ -17,3 +17,4 @@ export default function Footer() {
   )
 }
 
+// Requisito (i): Footer fixo em todas as páginas (SPA)

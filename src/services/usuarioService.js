@@ -24,3 +24,4 @@ export async function updateUsuario(id, usuario) {
     body: JSON.stringify(usuario)
   })
 }
+// Requisito (c), (d) e (h): CRUD completo de usuários via HTTP + tratamento de erro

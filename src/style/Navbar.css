@@ -10,7 +10,7 @@
 }
 
 .navbar-logo img {
-  height: 50px;
+  height: 140px;
   object-fit: contain;
 }
 
@@ -61,4 +61,21 @@
   .nav-link i {
     font-size: 1.4rem;
   }
+  .carrinho-link {
+  position: relative;
+  }
+
+.carrinho-badge {
+  position: absolute;
+  top: -6px;
+  right: 4px;
+  background-color: #fff;
+  color: #800000;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
 }
